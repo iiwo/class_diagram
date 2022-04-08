@@ -21,7 +21,7 @@ module ClassDiagram
           if const.inherits_from?('ActiveRecord::Base')
             "#{const.parsed_name}(fa:fa-database #{const.parsed_name})"
           elsif const.location.path.include?('app/jobs')
-            "#{const.parsed_name}(fa:fa-person-dolly #{const.parsed_name})"
+            "#{const.parsed_name}(fa:fa-dolly #{const.parsed_name})"
           else
             const.parsed_name
           end
