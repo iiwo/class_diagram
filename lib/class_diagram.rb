@@ -10,13 +10,20 @@ require_relative 'class_diagram/tree'
 require_relative 'class_diagram/tree_node'
 require_relative 'class_diagram/outputs/console'
 require_relative 'class_diagram/outputs/file'
+require_relative 'class_diagram/formatters/text'
+require_relative 'class_diagram/formatters/html'
 require_relative 'class_diagram/exporters/mermaid/node'
 require_relative 'class_diagram/exporters/mermaid/diagram'
 require 'class_diagram/railtie' if defined?(Rails)
 
 module ClassDiagram
-  def self.diagram(path:, exporter: Exporters::Mermaid::Diagram, output: Outputs::Console)
+  def self.diagram(
+    path:,
+    exporter: Exporters::Mermaid::Diagram,
+    formatter: Formatters::Text.new,
+    output: Outputs::Console.new
+  )
     tree = Tree.new(path: path)
-    output.new(exporter: exporter.new(tree: tree)).save
+    output.save(diagram_data: exporter.new(tree: tree).export, formatter: formatter)
   end
 end
