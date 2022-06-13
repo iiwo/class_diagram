@@ -3,13 +3,12 @@
 module ClassDiagram
   module Outputs
     class Console
-      def initialize(exporter:, options: {})
-        @exporter = exporter
+      def initialize(options)
         @options = options
       end
 
-      def save
-        puts @exporter.export
+      def save(diagram_data:, formatter:)
+        puts formatter.format(diagram_data: diagram_data)
       end
     end
   end

@@ -3,13 +3,13 @@
 module ClassDiagram
   module Outputs
     class File
-      def initialize(exporter:, options: { path: './diagram.txt' })
-        @exporter = exporter
+      def initialize(options = {})
         @options = options
       end
 
-      def save
-        ::File.write(path, @exporter.export)
+      def save(diagram_data:, formatter:)
+        write_path = path || "./diagram.#{formatter.file_extension}"
+        ::File.write(write_path, formatter.format(diagram_data: diagram_data))
       end
 
       private

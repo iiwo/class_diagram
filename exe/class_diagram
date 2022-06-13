@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+
+class ClassDiagramCLI < Thor
+  desc 'diagram', 'Generate class diagram'
+  method_option :path, aliases: '-p', desc: 'path to Ruby class file'
+  method_option :output, aliases: '-o', type: :string, enum: %w[console file], default: 'console', desc: 'target output for the diagram exporter'
+  method_option :format, aliases: '-f', type: :string, enum: %w[text html], default: 'text', desc: 'format of the diagram output'
+  method_option :export_path, aliases: '-e', desc: 'path for the file output (only used with file output)'
+
+  def diagram
+    output = `bundle exec rake "class_diagram:diagram[#{options[:path]},#{options[:output]},#{options[:format]},#{options[:export_path]}]"`
+    print output
+  end
+
+  def self.exit_on_failure?
+    true
+  end
+end
+
+ClassDiagramCLI.start(ARGV)
