@@ -1,0 +1,7 @@
+# frozen_string_literal: true
+
+require 'class_diagram'
+
+Dir.glob("#{Gem::Specification.find_by_name('class_diagram').gem_dir}/lib/class_diagram/tasks/**/*.rake").each do |file|
+  import file
+end

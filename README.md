@@ -46,5 +46,5 @@ example:
 with Rails console:
 
 ```ruby
-ClassDiagram.diagram(path: 'app/path/to/your/class.rb')
+ClassDiagram.diagram(path: 'app/path/to/your/class_node.rb')
 ```

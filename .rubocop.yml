@@ -5,6 +5,12 @@ AllCops:
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
 
+Layout/MultilineHashBraceLayout:
+  EnforcedStyle: symmetrical
+
+Layout/LineLength:
+  Max: 120
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: single_quotes
@@ -12,9 +18,6 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   Enabled: true
   EnforcedStyle: double_quotes
-
-Layout/LineLength:
-  Max: 120
 
 Metrics/BlockLength:
   Exclude:

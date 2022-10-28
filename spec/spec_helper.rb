@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'class_diagram'
+require File.expand_path('dummy/sample.rb', __dir__)
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -13,3 +14,5 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+#load File.expand_path('dummy/Rakefile', __dir__)

@@ -1,0 +1,38 @@
+project:
+  scope:
+    - "**/*.rb"
+
+groups:
+  gem:
+    scope:
+      - "lib/**/*.rb"
+    include:
+      - "**/*.rb":
+          follow: true
+          max_depth: 10
+    exclude:
+      - "lib/class_diagram/version.rb"
+    diagram:
+      format:
+        type: html
+      output:
+        type: file
+        path: "./tmp/class_diagram.html"
+      filters:
+        orphans: false
+
+  dummy:
+    scope:
+      - "spec/dummy/**/*.rb"
+    include:
+      - "**/*.rb":
+          follow: true
+          max_depth: 10
+    diagram:
+      format:
+        type: text
+      output:
+        type: file
+        path: "./tmp/dummy_diagram.txt"
+      filters:
+        orphans: false
