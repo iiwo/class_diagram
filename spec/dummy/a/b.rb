@@ -12,7 +12,5 @@ module A
     end
   end
 
-  module C
-    class D; end
-  end
+  class C::D; end # rubocop:disable Style/ClassAndModuleChildren
 end

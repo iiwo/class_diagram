@@ -62,7 +62,7 @@ module ClassDiagram
         end
 
         def match_includes(path:)
-          includes.grep(path: path)
+          includes.select { |include| include.match?(path: path) } # rubocop:disable Style/SelectByRegexp
         end
     end
   end
