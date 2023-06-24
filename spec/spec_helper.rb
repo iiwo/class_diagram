@@ -15,4 +15,4 @@ RSpec.configure do |config|
   end
 end
 
-#load File.expand_path('dummy/Rakefile', __dir__)
+# load File.expand_path('dummy/Rakefile', __dir__)

@@ -77,8 +77,8 @@ module ClassDiagram
 
       private
 
-        attr_writer :children, :elements, :namespaces, :name, :constantizer, :path, :options
-        attr_reader :options, :constantizer, :namespaces
+        attr_writer :children, :elements, :name, :path
+        attr_accessor :options, :constantizer, :namespaces
     end
   end
 end

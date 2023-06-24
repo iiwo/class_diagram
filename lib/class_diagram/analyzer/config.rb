@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ClassDiagram
   module Analyzer
     class Config
@@ -22,7 +24,7 @@ module ClassDiagram
         attr_accessor :options
 
         def matched_includes
-          @matched_includes ||= includes.select { |include| include.match?(path: path) }
+          @matched_includes ||= includes.grep(path: path)
         end
     end
   end

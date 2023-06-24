@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :class_diagram do
   desc 'Generate a class dependency diagram from a given path'
   task :diagram, [:config_path] do |_task, args|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module A
   # class comment
   class B < ::A::C
@@ -10,5 +12,7 @@ module A
     end
   end
 
-  class C::D; end
+  module C
+    class D; end
+  end
 end

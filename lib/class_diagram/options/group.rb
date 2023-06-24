@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ClassDiagram
   module Options
     class Group
@@ -60,7 +62,7 @@ module ClassDiagram
         end
 
         def match_includes(path:)
-          includes.select { |include| include.match?(path: path) }
+          includes.grep(path: path)
         end
     end
   end

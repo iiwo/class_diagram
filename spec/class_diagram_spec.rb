@@ -9,9 +9,9 @@ RSpec.describe ClassDiagram do
 
   describe 'runs task' do
     it 'prints graph' do
-      expect {
+      expect do
         ClassDiagramCLI.new.invoke(:diagram, [], { config: './spec/dummy/.class_diagram.yml' })
-      }.to output("graph LR\n").to_stdout
+      end.to output("graph LR\n").to_stdout
     end
   end
 end

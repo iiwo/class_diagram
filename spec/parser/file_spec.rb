@@ -6,7 +6,7 @@ RSpec.describe ClassDiagram::Parser::Tree do
   describe '#to_h' do
     it 'returns nodes hash' do
       data = File.read('./spec/dummy/a/b.rb')
-      ast_node = ::Parser::CurrentRuby.parse(data)
+      ast_node = Parser::CurrentRuby.parse(data)
       expected_hash = [
         {
           key: :module,
