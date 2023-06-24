@@ -1,0 +1,12 @@
+project:
+  scope:
+    - "*.rb"
+groups:
+  sample:
+    scope:
+      - "*.rb"
+    diagram:
+      format:
+        type: text
+      output:
+        type: console

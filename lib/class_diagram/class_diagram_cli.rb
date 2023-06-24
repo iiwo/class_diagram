@@ -5,7 +5,7 @@ class ClassDiagramCLI < Thor
   method_option :config, aliases: '-c', desc: 'config file path'
 
   def diagram
-    output = `bundle exec rake "class_diagram:diagram[#{options[:config]}]"`
+    output = `bundle exec rake "class_diagram:diagram[#{options['config']}]"`
     print output
   end
 
