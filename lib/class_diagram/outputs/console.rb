@@ -3,7 +3,7 @@
 module ClassDiagram
   module Outputs
     class Console
-      def initialize(options)
+      def initialize(options = {})
         @options = options
       end
 
